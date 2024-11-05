@@ -132,12 +132,12 @@ class GameArea extends Component {
     getIndexBlockForComputer = (indHuman) => {
 
         // check for computer's move
-        for (const [key, value] of Object.entries(bestStep)) {
+        for (const [key] of Object.entries(bestStep)) {
             for (const arrayBestStep of bestStep[key]) {
                 if (+key !== indHuman && this.state.blocks[key].value === null
                     && this.state.blocks[arrayBestStep[0]].value === this.symbolComputer
                     && this.state.blocks[arrayBestStep[1]].value === this.symbolComputer) {
-                    return +key;
+                             return +key;
                 }
             }
         }
